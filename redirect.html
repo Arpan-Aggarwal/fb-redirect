@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Facebook Token Redirect</title>
+  </head>
+  <body>
+    <h2>Facebook Access Token</h2>
+    <p id="token"></p>
+    <script>
+      const hash = window.location.hash;
+      const token = hash.match(/access_token=([^&]+)/);
+      if (token) {
+        document.getElementById("token").innerText = token[1];
+        console.log("Access Token:", token[1]);
+      } else {
+        document.getElementById("token").innerText = "Token not found.";
+      }
+    </script>
+  </body>
+</html>
